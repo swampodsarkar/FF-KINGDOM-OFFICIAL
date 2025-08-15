@@ -109,19 +109,19 @@
             <div class="row text-center g-4">
                 <div class="col-md-4">
                     <div class="stat-box">
-                        <h3 id="downloads">0+</h3>
+                        <h3 id="downloads">700+</h3>
                         <p>Downloads</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="stat-box">
-                        <h3 id="users">4+</h3>
+                        <h3 id="users">0+</h3>
                         <p>Users</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="stat-box">
-                        <h3 id="matches">2+</h3>
+                        <h3 id="matches">0+</h3>
                         <p>Matches Hosted</p>
                     </div>
                 </div>
@@ -153,37 +153,74 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
     <script>
-        // Firebase configuration
         const firebaseConfig = {
-            apiKey: "AIzaSyAjMuTTJtsvr5i9xAqzQuULciJrEkUCtgg",
-            authDomain: "sheba-khujun.firebaseapp.com",
-            databaseURL: "https://sheba-khujun-default-rtdb.asia-southeast1.firebasedatabase.app",
-            projectId: "sheba-khujun",
-            storageBucket: "sheba-khujun.firebasestorage.app",
-            messagingSenderId: "596961253953",
-            appId: "1:596961253953:web:370090c78cca43cdc9c4c0",
-            measurementId: "G-KTFBTHVRXG"
+            apiKey: "AIzaSyDX7Z8o5xVJa8cSHvaurZg4FkJvN8mJuto",
+            authDomain: "free-fire-kingdom.firebaseapp.com",
+            databaseURL: "https://free-fire-kingdom-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "free-fire-kingdom",
+            storageBucket: "free-fire-kingdom.appspot.com",
+            messagingSenderId: "889375613179",
+            appId: "1:889375613179:web:b36bd72dd208b101e0d05e"
         };
 
-        // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const db = firebase.database();
 
-        // Downloads reference
         const downloadsRef = db.ref("downloads");
+        const usersRef = db.ref("users");
+        const matchesRef = db.ref("matches");
 
-        // Load initial download count
-        downloadsRef.on("value", (snapshot) => {
-            const count = snapshot.val() || 0;
-            document.getElementById("downloads").innerText = count + "+";
+        // Initial load
+        downloadsRef.once("value").then(snapshot => {
+            const val = Number(snapshot.val());
+            if(val) {
+                document.getElementById("downloads").innerText = val + "+";
+            } else {
+                downloadsRef.set(700);
+                document.getElementById("downloads").innerText = "700+";
+            }
+        });
+
+        usersRef.once("value").then(snapshot => {
+            const val = Number(snapshot.val());
+            if(val) {
+                document.getElementById("users").innerText = val + "+";
+            } else {
+                usersRef.set(4);
+                document.getElementById("users").innerText = "500+";
+            }
+        });
+
+        matchesRef.once("value").then(snapshot => {
+            const val = Number(snapshot.val());
+            if(val) {
+                document.getElementById("matches").innerText = val + "+";
+            } else {
+                matchesRef.set(2);
+                document.getElementById("matches").innerText = "33+";
+            }
+        });
+
+        // Real-time updates
+        downloadsRef.on("value", snapshot => {
+            const val = Number(snapshot.val()) || 700;
+            document.getElementById("downloads").innerText = val + "+";
+        });
+
+        usersRef.on("value", snapshot => {
+            const val = Number(snapshot.val()) || 4;
+            document.getElementById("users").innerText = val + "+";
+        });
+
+        matchesRef.on("value", snapshot => {
+            const val = Number(snapshot.val()) || 2;
+            document.getElementById("matches").innerText = val + "+";
         });
 
         // Download button click
         document.getElementById("downloadBtn").addEventListener("click", function() {
-            downloadsRef.transaction((currentCount) => {
-                return (currentCount || 0) + 1;
-            });
-            window.location.href = "YOUR_DOWNLOAD_LINK"; // এখানে তোমার অ্যাপ ডাউনলোড লিংক বসাও
+            downloadsRef.transaction(current => (Number(current) || 700) + 1);
+            window.location.href = "YOUR_DOWNLOAD_LINK"; // এখানে ডাউনলোড লিঙ্ক দিন
         });
     </script>
 
