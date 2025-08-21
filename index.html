@@ -10,6 +10,7 @@
         body {
             font-family: 'Noto Sans Bengali', sans-serif;
             background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            margin:0; padding:0;
         }
         .hero {
             background: linear-gradient(135deg, #ff4e50, #f9d423);
@@ -17,9 +18,7 @@
             padding: 80px 0;
             border-radius: 0 0 30px 30px;
         }
-        .hero h1 {
-            text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
-        }
+        .hero h1 { text-shadow: 2px 2px 6px rgba(0,0,0,0.4); }
         .stats {
             padding: 50px 0;
         }
@@ -88,14 +87,12 @@
     <section class="hero">
         <div class="container">
             <div class="row align-items-center">
-                <!-- Text Side -->
                 <div class="col-md-6 text-center text-md-start">
                     <h1 class="display-4 fw-bold">FF Kingdom</h1>
-                    <p class="lead">বাংলাদেশের সেরা গেমিং টুর্নামেন্ট প্লাটফর্ম</p>
-                    <p>প্রতিদিন ফ্রি ফায়ার অথবা লুডু খেলে নগদ অর্থ পুরষ্কার জিতুন আমাদের অ্যাপের মাধ্যমে।</p>
+                    <p class="lead">বাংলাদেশের সেরা গেমিং টুর্নামেন্ট প্ল্যাটফর্ম</p>
+                    <p>প্রতিদিন ফ্রি ফায়ার অথবা লুডু খেলুন এবং নগদ অর্থ পুরষ্কার জিতুন।</p>
                     <button id="downloadBtn" class="btn btn-custom fw-bold mt-3">📥 Download App</button>
                 </div>
-                <!-- Image Side -->
                 <div class="col-md-6 text-center mt-4 mt-md-0">
                     <img src="https://dl.dir.freefiremobile.com/common/web_event/official2.ff.garena.all/202210/aa959aa3d8790d3a44f7f20f16adfa01.jpg" alt="Free Fire" class="ff-image">
                 </div>
@@ -109,19 +106,19 @@
             <div class="row text-center g-4">
                 <div class="col-md-4">
                     <div class="stat-box">
-                        <h3 id="downloads">700+</h3>
+                        <h3 id="downloads">2000+</h3>
                         <p>Downloads</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="stat-box">
-                        <h3 id="users">0+</h3>
+                        <h3 id="users">2000+</h3>
                         <p>Users</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="stat-box">
-                        <h3 id="matches">0+</h3>
+                        <h3 id="matches">50+</h3>
                         <p>Matches Hosted</p>
                     </div>
                 </div>
@@ -133,14 +130,16 @@
     <section class="py-5">
         <div class="container text-center text-dark">
             <h2>Daily Tournaments</h2>
-            <p>দিন রাত মজা করুন এবং আপনার জীবনের মান উন্নত করতে কিছু নগদ অর্থ উপার্জন করুন।</p>
+            <p>দিন রাত মজা করুন এবং নগদ অর্থ উপার্জন করুন।</p>
+
             <h2>Customer Support</h2>
             <div class="contact-links mt-3">
-                <a href="https://t.me/swampod" target="_blank"><i class="bi bi-telegram"></i> @swampod</a>
+                <a href="https://t.me/+lhyi8DfvMI03ZDU1" target="_blank"><i class="bi bi-telegram"></i> FF KINGDOM OFFICIALS</a>
                 <a href="https://wa.me/8801767882562" target="_blank"><i class="bi bi-whatsapp"></i> 01767882562</a>
             </div>
+
             <h2 class="mt-4">Best Pricing</h2>
-            <p>আমাদের টুর্নামেন্টগুলো সবসময় লাভজনক এবং সাশ্রয়ী।</p>
+            <p>আমাদের টুর্নামেন্টগুলো সবসময় লাভজনক এবং সাশ্রয়ী।</p>
         </div>
     </section>
 
@@ -170,57 +169,35 @@
         const usersRef = db.ref("users");
         const matchesRef = db.ref("matches");
 
-        // Initial load
+        // Initial setup
         downloadsRef.once("value").then(snapshot => {
-            const val = Number(snapshot.val());
-            if(val) {
-                document.getElementById("downloads").innerText = val + "+";
-            } else {
-                downloadsRef.set(700);
-                document.getElementById("downloads").innerText = "700+";
-            }
+            if(!snapshot.exists()) downloadsRef.set(2000);
         });
-
         usersRef.once("value").then(snapshot => {
-            const val = Number(snapshot.val());
-            if(val) {
-                document.getElementById("users").innerText = val + "+";
-            } else {
-                usersRef.set(4);
-                document.getElementById("users").innerText = "500+";
-            }
+            if(!snapshot.exists()) usersRef.set(2000);
         });
-
         matchesRef.once("value").then(snapshot => {
-            const val = Number(snapshot.val());
-            if(val) {
-                document.getElementById("matches").innerText = val + "+";
-            } else {
-                matchesRef.set(2);
-                document.getElementById("matches").innerText = "33+";
-            }
+            if(!snapshot.exists()) matchesRef.set(50);
         });
 
         // Real-time updates
         downloadsRef.on("value", snapshot => {
-            const val = Number(snapshot.val()) || 700;
+            const val = Number(snapshot.val()) || 2000;
             document.getElementById("downloads").innerText = val + "+";
         });
-
         usersRef.on("value", snapshot => {
-            const val = Number(snapshot.val()) || 4;
+            const val = Number(snapshot.val()) || 2000;
             document.getElementById("users").innerText = val + "+";
         });
-
         matchesRef.on("value", snapshot => {
-            const val = Number(snapshot.val()) || 2;
+            const val = Number(snapshot.val()) || 50;
             document.getElementById("matches").innerText = val + "+";
         });
 
         // Download button click
         document.getElementById("downloadBtn").addEventListener("click", function() {
-            downloadsRef.transaction(current => (Number(current) || 700) + 1);
-            window.location.href = "https://apk.e-droid.net/apk/app3699572-o0k9i7.apk?v=1"; // এখানে ডাউনলোড লিঙ্ক দিন
+            downloadsRef.transaction(current => (Number(current) || 2000) + 1);
+            window.location.href = "https://apk.e-droid.net/apk/app3699572-o0k9i7.apk?v=1";
         });
     </script>
 
