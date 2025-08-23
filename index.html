@@ -1,243 +1,246 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FF Kingdom</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <!-- Google Fonts for Bengali -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Noto Sans Bengali', sans-serif;
-      background: linear-gradient(135deg, #ffecd2, #fcb69f);
-      margin:0; padding:0;
-    }
-    .hero {
-      background: linear-gradient(135deg, #ff4e50, #f9d423);
-      color: white;
-      padding: 80px 0;
-      border-radius: 0 0 30px 30px;
-      text-align: center;
-    }
-    .hero h1 { text-shadow: 2px 2px 6px rgba(0,0,0,0.4); }
-    .stats { padding: 50px 0; }
-    .stat-box {
-      background: linear-gradient(135deg, #43cea2, #185a9d);
-      color: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .stat-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 20px rgba(0,0,0,0.3);
-    }
-    footer {
-      background: #212529;
-      color: white;
-      padding: 15px 0;
-      text-align: center;
-    }
-    .ff-image {
-      max-width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
-    .btn-custom {
-      background: linear-gradient(135deg, #ff512f, #dd2476);
-      border: none;
-      color: white;
-      padding: 12px 30px;
-      border-radius: 50px;
-      font-size: 18px;
-      transition: 0.3s;
-    }
-    .btn-custom:hover {
-      background: linear-gradient(135deg, #dd2476, #ff512f);
-      transform: scale(1.05);
-    }
-    .contact-links a {
-      display: inline-flex;
-      align-items: center;
-      background: white;
-      color: #212529;
-      padding: 10px 15px;
-      border-radius: 50px;
-      margin: 5px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-    .contact-links a:hover {
-      background: #ff4e50;
-      color: white;
-      transform: scale(1.05);
-    }
-    .contact-links i {
-      font-size: 20px;
-      margin-right: 8px;
-    }
-
-    /* Facebook Highlight Section */
-    .facebook-highlight {
-      background: linear-gradient(135deg, #1877f2, #00a2ff);
-      color: white;
-      padding: 50px 20px;
-      text-align: center;
-      border-radius: 20px;
-      margin: 40px auto;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    }
-    .facebook-highlight h2 {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-    .facebook-highlight a {
-      display: inline-block;
-      background: white;
-      color: #1877f2;
-      padding: 12px 25px;
-      font-size: 18px;
-      border-radius: 50px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    .facebook-highlight a:hover {
-      background: #fff;
-      color: #0d6efd;
-      transform: scale(1.1);
-      box-shadow: 0 5px 15px rgba(255,255,255,0.5);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF Kingdom</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans Bengali', sans-serif;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            margin:0; padding:0;
+        }
+        .hero {
+            background: linear-gradient(135deg, #ff4e50, #f9d423);
+            color: white;
+            padding: 80px 0;
+            border-radius: 0 0 30px 30px;
+        }
+        .hero h1 { text-shadow: 2px 2px 6px rgba(0,0,0,0.4); }
+        .stats { padding: 50px 0; }
+        .stat-box {
+            background: linear-gradient(135deg, #43cea2, #185a9d);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .stat-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+        }
+        footer {
+            background: #212529;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .ff-image {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .btn-custom {
+            background: linear-gradient(135deg, #ff512f, #dd2476);
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        .btn-custom:hover {
+            background: linear-gradient(135deg, #dd2476, #ff512f);
+            transform: scale(1.05);
+        }
+        .contact-links a {
+            display: inline-flex;
+            align-items: center;
+            background: white;
+            color: #212529;
+            padding: 10px 15px;
+            border-radius: 50px;
+            margin: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .contact-links a:hover {
+            background: #ff4e50;
+            color: white;
+            transform: scale(1.05);
+        }
+        .contact-links i {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+        /* Highlight Facebook Section */
+        .facebook-highlight {
+            background: linear-gradient(135deg, #1877f2, #42a5f5);
+            color: white;
+            border-radius: 20px;
+            padding: 40px 20px;
+            margin: 40px auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 800px;
+        }
+        .facebook-highlight h2 {
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .facebook-highlight a {
+            display: inline-block;
+            background: white;
+            color: #1877f2;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .facebook-highlight a:hover {
+            background: #0d47a1;
+            color: white;
+            transform: scale(1.05);
+        }
+        .facebook-highlight i {
+            margin-right: 8px;
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h1 class="display-4 fw-bold">FF Kingdom</h1>
-      <p class="lead">বাংলাদেশের সেরা গেমিং টুর্নামেন্ট প্ল্যাটফর্ম</p>
-      <p>প্রতিদিন ফ্রি ফায়ার অথবা লুডু খেলুন এবং নগদ অর্থ পুরষ্কার জিতুন।</p>
-      <button id="downloadBtn" class="btn btn-custom fw-bold mt-3">📥 Download App</button>
-    </div>
-  </section>
-
-  <!-- Stats Section -->
-  <section class="stats">
-    <div class="container">
-      <div class="row text-center g-4">
-        <div class="col-md-4">
-          <div class="stat-box">
-            <h3 id="downloads">2000+</h3>
-            <p>Downloads</p>
-          </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <h1 class="display-4 fw-bold">FF Kingdom</h1>
+                    <p class="lead">বাংলাদেশের সেরা গেমিং টুর্নামেন্ট প্ল্যাটফর্ম</p>
+                    <p>প্রতিদিন ফ্রি ফায়ার অথবা লুডু খেলুন এবং নগদ অর্থ পুরষ্কার জিতুন।</p>
+                    <button id="downloadBtn" class="btn btn-custom fw-bold mt-3">📥 Download App</button>
+                </div>
+                <div class="col-md-6 text-center mt-4 mt-md-0">
+                    <img src="https://dl.dir.freefiremobile.com/common/web_event/official2.ff.garena.all/202210/aa959aa3d8790d3a44f7f20f16adfa01.jpg" alt="Free Fire" class="ff-image">
+                </div>
+            </div>
         </div>
-        <div class="col-md-4">
-          <div class="stat-box">
-            <h3 id="users">2000+</h3>
-            <p>Users</p>
-          </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-md-4">
+                    <div class="stat-box">
+                        <h3 id="downloads">2000+</h3>
+                        <p>Downloads</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-box">
+                        <h3 id="users">2000+</h3>
+                        <p>Users</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-box">
+                        <h3 id="matches">50+</h3>
+                        <p>Matches Hosted</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4">
-          <div class="stat-box">
-            <h3 id="matches">50+</h3>
-            <p>Matches Hosted</p>
-          </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="py-5">
+        <div class="container text-center text-dark">
+            <h2>Daily Tournaments</h2>
+            <p>দিন রাত মজা করুন এবং নগদ অর্থ উপার্জন করুন।</p>
+
+            <h2>Customer Support</h2>
+            <div class="contact-links mt-3">
+                <a href="https://t.me/+lhyi8DfvMI03ZDU1" target="_blank"><i class="bi bi-telegram"></i> FF KINGDOM OFFICIALS</a>
+                <a href="https://wa.me/8801767882562" target="_blank"><i class="bi bi-whatsapp"></i> 01767882562</a>
+            </div>
+
+            <h2 class="mt-4">Best Pricing</h2>
+            <p>আমাদের টুর্নামেন্টগুলো সবসময় লাভজনক এবং সাশ্রয়ী।</p>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Info Section -->
-  <section class="py-5">
-    <div class="container text-center text-dark">
-      <h2>Daily Tournaments</h2>
-      <p>দিন রাত মজা করুন এবং নগদ অর্থ উপার্জন করুন।</p>
+    <!-- Facebook Highlight Section -->
+    <section class="facebook-highlight">
+        <h2>🔴 লাইভ টুর্নামেন্ট দেখুন</h2>
+        <p>রিয়েল-টাইম আপডেট এবং টুর্নামেন্ট ভিজিট করতে আমাদের অফিসিয়াল Facebook পেজে যোগ দিন।</p>
+        <a href="https://www.facebook.com/profile.php?id=61579782358444" target="_blank">
+            <i class="bi bi-facebook"></i> Visit FF KINGDOM BANGLADESH
+        </a>
+    </section>
 
-      <h2>Customer Support</h2>
-      <div class="contact-links mt-3">
-        <a href="https://t.me/+lhyi8DfvMI03ZDU1" target="_blank"><i class="bi bi-telegram"></i> FF KINGDOM OFFICIALS</a>
-        <a href="https://wa.me/8801767882562" target="_blank"><i class="bi bi-whatsapp"></i> 01767882562</a>
-      </div>
+    <!-- Footer -->
+    <footer>
+        <p>FF Kingdom © 2025 | Developed by Sweez</p>
+    </footer>
 
-      <h2 class="mt-4">Best Pricing</h2>
-      <p>আমাদের টুর্নামেন্টগুলো সবসময় লাভজনক এবং সাশ্রয়ী।</p>
-    </div>
-  </section>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDX7Z8o5xVJa8cSHvaurZg4FkJvN8mJuto",
+            authDomain: "free-fire-kingdom.firebaseapp.com",
+            databaseURL: "https://free-fire-kingdom-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "free-fire-kingdom",
+            storageBucket: "free-fire-kingdom.appspot.com",
+            messagingSenderId: "889375613179",
+            appId: "1:889375613179:web:b36bd72dd208b101e0d05e"
+        };
 
-  <!-- Facebook Highlight Section -->
-  <section class="facebook-highlight">
-    <div class="container">
-      <h2>📡 Live Tournament Updates</h2>
-      <p>সবচেয়ে দ্রুত আপডেট ও লাইভ টুর্নামেন্ট দেখুন আমাদের অফিসিয়াল ফেসবুক পেজে</p>
-      <a href="https://www.facebook.com/profile.php?id=61579782358444" target="_blank">
-        🔵 Visit FF KINGDOM BANGLADESH Facebook Page
-      </a>
-    </div>
-  </section>
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
 
-  <!-- Footer -->
-  <footer>
-    <p>FF Kingdom © 2025 | Developed by Sweez</p>
-  </footer>
+        const downloadsRef = db.ref("downloads");
+        const usersRef = db.ref("users");
+        const matchesRef = db.ref("matches");
 
-  <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyDX7Z8o5xVJa8cSHvaurZg4FkJvN8mJuto",
-      authDomain: "free-fire-kingdom.firebaseapp.com",
-      databaseURL: "https://free-fire-kingdom-default-rtdb.asia-southeast1.firebasedatabase.app",
-      projectId: "free-fire-kingdom",
-      storageBucket: "free-fire-kingdom.appspot.com",
-      messagingSenderId: "889375613179",
-      appId: "1:889375613179:web:b36bd72dd208b101e0d05e"
-    };
+        // Initial setup
+        downloadsRef.once("value").then(snapshot => {
+            if(!snapshot.exists()) downloadsRef.set(2000);
+        });
+        usersRef.once("value").then(snapshot => {
+            if(!snapshot.exists()) usersRef.set(2000);
+        });
+        matchesRef.once("value").then(snapshot => {
+            if(!snapshot.exists()) matchesRef.set(50);
+        });
 
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.database();
+        // Real-time updates
+        downloadsRef.on("value", snapshot => {
+            const val = Number(snapshot.val()) || 2000;
+            document.getElementById("downloads").innerText = val + "+";
+        });
+        usersRef.on("value", snapshot => {
+            const val = Number(snapshot.val()) || 2000;
+            document.getElementById("users").innerText = val + "+";
+        });
+        matchesRef.on("value", snapshot => {
+            const val = Number(snapshot.val()) || 50;
+            document.getElementById("matches").innerText = val + "+";
+        });
 
-    const downloadsRef = db.ref("downloads");
-    const usersRef = db.ref("users");
-    const matchesRef = db.ref("matches");
-
-    // Initial setup
-    downloadsRef.once("value").then(snapshot => {
-      if(!snapshot.exists()) downloadsRef.set(2000);
-    });
-    usersRef.once("value").then(snapshot => {
-      if(!snapshot.exists()) usersRef.set(2000);
-    });
-    matchesRef.once("value").then(snapshot => {
-      if(!snapshot.exists()) matchesRef.set(50);
-    });
-
-    // Real-time updates
-    downloadsRef.on("value", snapshot => {
-      const val = Number(snapshot.val()) || 2000;
-      document.getElementById("downloads").innerText = val + "+";
-    });
-    usersRef.on("value", snapshot => {
-      const val = Number(snapshot.val()) || 2000;
-      document.getElementById("users").innerText = val + "+";
-    });
-    matchesRef.on("value", snapshot => {
-      const val = Number(snapshot.val()) || 50;
-      document.getElementById("matches").innerText = val + "+";
-    });
-
-    // Download button click
-    document.getElementById("downloadBtn").addEventListener("click", function() {
-      downloadsRef.transaction(current => (Number(current) || 2000) + 1);
-      window.location.href = "https://apk.e-droid.net/apk/app3699572-o0k9i7.apk?v=1";
-    });
-  </script>
+        // Download button click
+        document.getElementById("downloadBtn").addEventListener("click", function() {
+            downloadsRef.transaction(current => (Number(current) || 2000) + 1);
+            window.location.href = "https://apk.e-droid.net/apk/app3699572-o0k9i7.apk?v=1";
+        });
+    </script>
 
 </body>
 </html>
